@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About SM</title>
+
+    <style>
+      /* ==========================
+       TEMA WARNA 
+       ========================== */
+      :root {
+        --bg-body: #1a001a;
+        --text-main: #ffe6f7;
+        --card-bg: #330033;
+        --accent: #ff008c;
+        --accent-glow: #ff4db8;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: var(--bg-body);
+        color: var(--text-main);
+      }
+
+      body.light-theme {
+        --bg-body: #ffffff;
+        --text-main: #1a001a;
+        --card-bg: #fafafa;
+        --accent: #8f3fff;
+        --accent-glow: #b58bff;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--accent);
+        padding: 20px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      header img {
+        width: 130px;
+        margin-right: 17px;
+      }
+
+      header .title {
+        font-size: 36px;
+        font-weight: 600;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        background: var(--card-bg);
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      nav a:hover {
+        color: #ff66c4;
+      }
+
+      .profile-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .profile-container:hover {
+        transform: scale(1.015);
+        box-shadow: 0 0 25px rgba(255, 0, 140, 0.35);
+      }
+
+      .profile-container img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .profile-container h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      .profile-container p {
+        text-align: justify;
+        line-height: 1.7;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          width: 100%;
+          font-size: 36px;
+          margin-top: 10px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 30%;
+          text-align: center;
+        }
+
+        .profile-container {
+          margin: 25px 15px;
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 100%;
+          text-align: center;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          font-size: 26px;
+        }
+      }
+
+      footer {
+        background: var(--accent);
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="sm.png" alt="SM Entertainment" />
+      <div class="title">SM ENTERTAINMENT INDONESIA</div>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="grupsm.html">Groups</a>
+      <a href="fandom.html">Fandom</a>
+      <a href="about.html">About</a>
+    </nav>
+    <br /><br />
+
+    <div class="profile-container">
+      <img src="sooman.jpg" alt="Lee Soo-man" />
+      <h1>Profil Pendiri</h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: justify">
+        Lee Soo-man (lahir 18 Juni 1952) adalah produser rekaman dan eksekutif hiburan asal Korea Selatan yang dikenal sebagai pendiri SM Entertainment, salah satu perusahaan hiburan terbesar di Korea Selatan. Ia kerap dijuluki sebagai
+        Presiden Kebudayaan karena perannya sebagai pelopor Korean Wave (Hallyu), khususnya dalam pengembangan industri K-pop. Lee Soo-man memulai kariernya sebagai penyanyi pada tahun 1972 saat masih berstatus mahasiswa di Seoul National
+        University. Ia kemudian mendirikan SM Entertainment pada tahun 1989, yang berkembang pesat menjadi agensi hiburan dan label rekaman terkemuka di Korea Selatan. <br />
+      </p>
+      <br />
+
+      <h3>1952–1980: Awal Kehidupan dan Karier</h3>
+      <p>
+        Lee Soo-man lahir di Seoul, Korea Selatan, pada 18 Juni 1952. Ia menempuh pendidikan di Seoul National University dari tahun 1971 hingga 1979. Karier musiknya dimulai pada tahun 1972 sebagai penyanyi solo, dan ia dikenal melalui
+        beberapa lagu populer seperti “Happiness” dan “One Piece of Dream”. Selain bernyanyi, Lee juga aktif sebagai DJ radio dan pembawa acara televisi. Pada tahun 1980, ia membentuk grup musik Lee Soo-man and 365 Days. Namun, kebijakan
+        sensor media yang ketat pada masa pemerintahan Chun Doo-hwan menyebabkan aktivitasnya di industri musik Korea terhambat, sehingga ia memutuskan untuk menghentikan sementara kariernya di bidang hiburan.
+      </p>
+      <br />
+
+      <h3>1980–1985: Studi di Amerika Serikat</h3>
+      <p>
+        Pada awal 1980-an, Lee Soo-man pindah ke Amerika Serikat untuk melanjutkan pendidikan di bidang teknik komputer di California State University, Northridge, dan meraih gelar magister. Selama berada di Amerika, ia menyaksikan
+        perkembangan pesat industri musik populer melalui MTV dan munculnya artis global seperti Michael Jackson. Pengalaman ini membentuk visinya untuk membangun fondasi industri musik pop Korea yang modern dan terstruktur. Lee kembali ke
+        Korea Selatan pada tahun 1985 dengan tujuan mengembangkan industri hiburan nasional.
+      </p>
+      <br />
+
+      <h3>1985–Sekarang: Pendirian dan Perkembangan SM Entertainment</h3>
+      <p>
+        Setelah kembali ke Korea, Lee Soo-man kembali aktif di dunia hiburan sebagai DJ dan presenter. Pada tahun 1989, setelah mengumpulkan pengalaman dan modal, ia mendirikan perusahaan hiburan bernama SM Studio di Apgujeong, Seoul, dan
+        menandatangani kontrak dengan penyanyi Hyun Jin-young. Pada dekade 1990-an, SM Studio mengembangkan sistem manajemen artis in-house yang mengelola seluruh aspek karier artis secara terpadu. Pendekatan ini menargetkan pasar remaja
+        dan menekankan pembentukan artis secara menyeluruh, baik dari segi musik, penampilan, maupun citra. Pada tahun 1995, SM Studio resmi berganti nama menjadi SM Entertainment. Pada tahun 2010, Lee Soo-man mengundurkan diri dari posisi
+        dewan direksi, namun tetap berperan aktif dalam bidang manajemen dan pembentukan artis.
+      </p>
+
+      <br /><br />
+      <hr />
+      <br /><br /><br />
+
+      <img src="sm.webp" alt="Foto SM ENTERTAINMENT" /> <br />
+      <h1>SM ENTERTAINMENT</h1>
+      <p style="text-align: justify">
+        S.M. Entertainment (SM엔터테인먼트) merupakan perusahaan hiburan asal Korea Selatan yang didirikan pada tahun 1995 oleh Lee Soo-man. Perusahaan ini tumbuh menjadi salah satu agensi hiburan terbesar dan paling berpengaruh di Korea
+        Selatan. Kegiatan bisnisnya mencakup label rekaman, produksi dan distribusi musik, penyelenggaraan konser, manajemen artis, serta penerbitan musik. SM dikenal luas sebagai salah satu pelopor sistem industri K-pop modern yang
+        terorganisasi dan berorientasi global. <br /><br />
+
+        Sejak awal berdirinya, S.M. Entertainment membangun sistem produksi artis secara terintegrasi atau in-house, mulai dari perekrutan trainee, pelatihan, produksi musik, hingga promosi. Pada akhir 1990-an, SM berhasil melahirkan grup
+        generasi pertama yang sangat berpengaruh seperti H.O.T, S.E.S., Shinhwa, dan Fly to the Sky. Kesuksesan grup-grup ini menjadi fondasi kuat bagi perkembangan industri idol K-pop di Korea Selatan.
+        <br /><br />
+
+        Memasuki awal 2000-an, meskipun beberapa grup besar bubar atau meninggalkan agensi, SM tetap mempertahankan eksistensinya melalui restrukturisasi dan ekspansi bisnis. Perusahaan mulai menjalin afiliasi dengan berbagai pihak,
+        tercatat di KOSDAQ, serta memperluas jangkauan ke luar negeri, khususnya Jepang melalui kerja sama dengan Avex Trax. Pada periode ini pula, SM mendebutkan artis generasi kedua seperti TVXQ, TRAX, The Grace, dan Super Junior.
+        <br /><br />
+
+        Pada periode 2005–2010, di bawah kepemimpinan CEO Kim Young-min, SM semakin menekankan strategi internasionalisasi. Berbagai artis dengan target pasar global diperkenalkan, termasuk Zhang Liyin, J-Min, Girls’ Generation, SHINee, dan
+        f(x). SM juga membentuk sub-unit Super Junior-M untuk pasar Tiongkok serta mulai merancang penetrasi pasar Amerika Serikat melalui anak perusahaan SM Entertainment USA. <br /><br />
+
+        Memasuki dekade 2010-an, SM memperluas bisnisnya melalui usaha patungan, akuisisi, dan pembentukan anak perusahaan di berbagai sektor. Grup EXO didebutkan dengan konsep dua unit untuk promosi di Korea dan Tiongkok, menandai
+        pendekatan lintas negara yang semakin kuat. Selain itu, SM mengembangkan SM C&C untuk merambah industri televisi dan hiburan non-musik, serta memperkenalkan berbagai proyek budaya dan pameran. <br /><br />
+
+        Inovasi konsep menjadi ciri khas SM pada periode selanjutnya, terutama melalui pengenalan New Culture Technology dan debut grup NCT dengan sistem anggota yang fleksibel dan unit tak terbatas. SM juga mendirikan label EDM ScreaM
+        Records, mengembangkan platform digital seperti SM Station, serta memperluas konten ke ranah gim, media digital, dan kolaborasi global. Pendekatan ini menunjukkan upaya SM untuk menyesuaikan diri dengan perubahan industri hiburan
+        dan teknologi. <br /><br />
+
+        Selain musik dan hiburan, S.M. Entertainment melakukan diversifikasi ke sektor lain seperti pariwisata, olahraga, fashion, properti, dan pendidikan. Perusahaan menjalin kerja sama dengan agensi model ESteem, mengembangkan proyek SM
+        Town Culture Complex, serta merencanakan pendirian sekolah internasional K-pop. Dengan pendapatan ratusan miliar won dan investasi strategis dari perusahaan global seperti Alibaba Group, S.M. Entertainment dipandang sebagai
+        perusahaan yang tidak hanya membentuk tren K-pop, tetapi juga membangun ekosistem hiburan global yang berkelanjutan.
+      </p>
+    </div>
+    <br />
+
+    <footer>© 2025 SM Entertainment Indonesia. All Rights Reserved.</footer>
+
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+    </script>
+  </body>
+</html>

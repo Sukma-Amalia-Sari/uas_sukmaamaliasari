@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SM Entertainment News</title>
+
+    <style>
+      :root {
+        --bg-body: #1a001a;
+        --text-main: #ffe6f7;
+        --card-bg: #330033;
+        --accent: #ff008c;
+        --accent-glow: #ff4db8;
+      }
+
+      body.light-theme {
+        --bg-body: #ffffff;
+        --text-main: #1a001a;
+        --card-bg: #fafafa;
+        --accent: #8f3fff;
+        --accent-glow: #b58bff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: var(--bg-body);
+        color: var(--text-main);
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--accent);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 0 15px var(--accent-glow);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      header img {
+        width: 120px;
+      }
+
+      header .title {
+        font-size: 36px;
+        font-weight: 600;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        background: var(--card-bg);
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      nav a:hover {
+        color: #ff66c4;
+      }
+
+      .news-wrapper {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background: var(--card-bg);
+        border-radius: 14px;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+      }
+
+      .news-wrapper h1 {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .news-article {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 22px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .news-article:last-child {
+        border-bottom: none;
+      }
+
+      .news-thumb {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .news-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .news-article:hover .news-thumb img {
+        transform: scale(1.08);
+      }
+
+      .news-content h2 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      .news-meta {
+        font-size: 13px;
+        opacity: 0.75;
+        margin-bottom: 10px;
+      }
+
+      .news-content p {
+        margin: 0;
+        line-height: 1.6;
+        text-align: justify;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 30%;
+          text-align: center;
+        }
+
+        .news-article {
+          grid-template-columns: 1fr;
+        }
+
+        .news-thumb {
+          height: 220px;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          width: 100%;
+          font-size: 36px;
+          margin-top: 10px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          font-size: 26px;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 100%;
+        }
+
+        .news-wrapper {
+          margin: 25px 15px;
+          padding: 20px;
+        }
+
+        .news-content h2 {
+          font-size: 20px;
+        }
+      }
+
+      footer {
+        background: var(--accent);
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="sm.png" alt="SM Entertainment" />
+      <div class="title">SM ENTERTAINMENT INDONESIA</div>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="grupsm.html">Groups</a>
+      <a href="fandom.html">Fandom</a>
+      <a href="about.html">About</a>
+    </nav>
+    <br /><br />
+
+    <div class="news-wrapper">
+      <h1>Latest News</h1>
+      <br />
+
+      <article class="news-article">
+        <div class="news-thumb"><img src="news1.webp" /></div>
+        <div class="news-content">
+          <h2>Rayakan 1 Tahun Debut, Hearts2Hearts Gelar Fanmeeting Perdana HEARTS2HOUSE Awal 2026</h2>
+          <div class="news-meta">SM Entertainment · 15 Dec 2025</div>
+          <p>
+            Hearts2Hearts resmi mengumumkan fanmeeting perdana bertajuk “2026 Hearts2Hearts FANMEETING HEARTS2HOUSE” yang digelar sebagai perayaan satu tahun debut mereka di industri K-pop. Fanmeeting ini dirancang bukan hanya sebagai ajang
+            temu penggemar, tetapi juga sebagai perayaan hangat yang mempertemukan Hearts2Hearts dengan fandom mereka, S2U, dalam suasana yang lebih intim dan personal. Pengumuman ini disambut antusias oleh para penggemar karena menjadi
+            fanmeeting pertama sejak debut grup tersebut. <br /><br />
+            HEARTS2HOUSE akan berlangsung selama dua hari, 21 dan 22 Februari 2026, di Olympic Hall, Olympic Park, Seoul, memberikan kesempatan bagi lebih banyak S2U untuk hadir. Mengusung konsep “rumah” dan “social club”, fanmeeting ini
+            mengajak penggemar masuk ke dunia Hearts2Hearts yang menekankan kedekatan emosional dan interaksi langsung. Selain penampilan musik, acara akan diisi dengan talk session, permainan, dan berbagai segmen interaktif yang
+            memungkinkan fans mengenal sisi personal para member, sekaligus menciptakan momen kebersamaan yang hangat dan berkesan.
+          </p>
+        </div>
+      </article>
+
+      <article class="news-article">
+        <div class="news-thumb"><img src="news2.jpeg" /></div>
+        <div class="news-content">
+          <h2>aespa Siap Hadirkan “Drift” di MelOn Music Awards 2025</h2>
+          <div class="news-meta">SM Entertainment · 10 Dec 2025</div>
+          <p>
+            Panggung MelOn Music Awards 2025 dipastikan menjadi salah satu momen yang paling dinanti penggemar K-pop setelah dikonfirmasi bahwa aespa akan membawakan lagu “Drift” secara langsung. Lagu ini selama ini dikenal sebagai salah
+            satu karya yang paling sering diminta penggemar untuk ditampilkan di panggung penuh, berkat atmosfernya yang kuat, ritme agresif, serta identitas musikal khas aespa. Grup yang beranggotakan Karina, Giselle, Winter, dan Ningning
+            tersebut akan menghadirkan versi panggung spesial “Drift” dengan aransemen ulang yang dibuat eksklusif untuk ajang MMA, sehingga penampilan ini dipastikan berbeda dari versi album. <br /><br />
+
+            Sebelumnya, aespa juga mencuri perhatian melalui lagu “Dirty Work” dan “Rich Man”, yang semakin menegaskan arah musik mereka yang berani dan konsisten dengan konsep “iron taste”. Konsistensi inilah yang membuat setiap penampilan
+            aespa selalu dinanti, terutama di panggung penghargaan besar. Dengan nuansa gelap, intens, dan progresif yang dimiliki “Drift”, serta tambahan aransemen khusus, penampilan aespa di MelOn Music Awards 2025 diprediksi akan menjadi
+            salah satu sorotan utama malam penghargaan.
+          </p>
+        </div>
+      </article>
+
+      <article class="news-article">
+        <div class="news-thumb"><img src="news3.webp" /></div>
+        <div class="news-content">
+          <h2>NCT DREAM Comeback, Spotify Manjakan Fans dengan Konten Eksklusif</h2>
+          <div class="news-meta">SM Entertainment · 3 Dec 2025</div>
+          <p>
+            Spotify merayakan comeback terbaru NCT DREAM dengan menghadirkan Beat It Up | Spotify Performance Video untuk fans di Indonesia dan di seluruh dunia, kini telah tersedia di Spotify dan dapat ditemukan melalui K-Pop ON! Hub.
+            Berkolaborasi dengan Spotify, NCT DREAM membawa energi dan karisma khas mereka di video K-Pop Performance terbaru ini, menyajikan visual memukau yang fokus pada aksi panggung dan koreografi lagu. <br /><br />Dengan latar
+            minimalis, video ini menonjolkan gerakan yang detail dan emosi dari lagu tersebut, menjadikan penampilan NCT DREAM sebagai pusat perhatian. Untuk membangun antusiasme, Spotify juga merilis serangkaian video dance challenge di
+            kanal YouTube Spotify Korea. Menampilkan MARK, RENJUN, JENO, HAECHAN, JAEMIN, CHENLE, dan JISUNG, kini penggemar memiliki lebih banyak cara untuk menyaksikan pesona dari grup ini.
+          </p>
+        </div>
+      </article>
+
+      <article class="news-article">
+        <div class="news-thumb"><img src="news4.jpg" /></div>
+        <div class="news-content">
+          <h2>SM Global Audition 2026</h2>
+          <div class="news-meta">SM Entertainment · 21 Nov 2025</div>
+          <p>
+            SM Entertainment akan menyelenggarakan “SM Global Audition 2026”, sebuah audisi global berskala besar untuk mencari talenta baru. Audisi ini akan dimulai di Busan pada 10 Januari, kemudian berlanjut ke kota-kota lain di Korea
+            Selatan seperti Daegu, Gwangju, Daejeon, Pulau Jeju, dan berakhir di Seoul. Setelah tahap Korea, audisi akan dilanjutkan ke 21 lokasi internasional, termasuk Bangkok; Fukuoka, Tokyo, Nagoya, dan Osaka di Jepang; Shanghai,
+            Shenzhen, Zhengzhou, Beijing, Changsha, dan Chengdu di Tiongkok; Los Angeles dan New Jersey di Amerika Serikat; serta Sydney dan Brisbane di Australia. <br /><br />Pra-pendaftaran untuk negara-negara Asia telah dibuka melalui
+            situs web SM Audition dan terbuka bagi peserta yang lahir antara tahun 2007 hingga 2015, sementara pendaftaran untuk Amerika Serikat dan Australia akan dibuka pada 23 Maret. SM Global Audition yang dimulai sejak 2006 telah
+            melahirkan banyak artis sukses, seperti Wendy dan Joy dari Red Velvet; Johnny, Yuta, Ten, Mark, Renjun, Kun, Yangyang, dan Riku dari NCT; serta Carmen dari Hearts2Hearts. Seri audisi ini terus menarik perhatian calon bintang
+            K-pop dan penggemar internasional, dan situs web audisi tahun ini juga telah diperbarui serta meraih berbagai penghargaan desain.
+          </p>
+        </div>
+      </article>
+
+      <article class="news-article">
+        <div class="news-thumb"><img src="news5.jpg" /></div>
+        <div class="news-content">
+          <h2>Hearts2Hearts Rilis Mini Album Focus</h2>
+          <div class="news-meta">SM Entertainment · 23 Oct 2025</div>
+          <p>
+            Girl group asal Korea Selatan, Hearts2Hearts, resmi merilis mini album pertama mereka berjudul Focus pada 20 Oktober 2025. Album ini menjadi langkah baru bagi grup besutan SM Entertainment tersebut setelah debut melalui lagu
+            “The Chase” pada Februari sebelumnya. Focus menampilkan warna musik yang lebih matang dan beragam, memadukan genre seperti house, new jack swing, city pop, nu-disco, hingga RnB pop ballad. Lagu utama “Focus” mengangkat pesan
+            tentang pentingnya menatap diri sendiri dan menemukan arah hidup, mencerminkan proses kedewasaan serta pencarian identitas Hearts2Hearts. <br /><br />
+
+            Dari sisi musikalitas, vokal para member terdengar semakin solid, dengan Carmen sebagai main vokal menonjol melalui karakter suara yang lembut namun tegas. Nada tinggi Carmen menjadi sorotan, terutama dalam lagu “Blue Moon” dan
+            “Flutter”, serta berperan sebagai pengikat emosi dalam keseluruhan album. Peluncuran Focus dirayakan melalui showcase di Blues Square SOL Travel Hall, Yeongsan, Seoul, pada hari yang sama. Dalam acara tersebut, para
+            member—Jiwoo, Carmen, Yuha, Stella, Juun, Ian, A-na, dan Ye-on—memperkenalkan lagu-lagu baru mereka dan menyebut album ini sebagai simbol kesiapan Hearts2Hearts untuk tampil lebih percaya diri dan “menjadi pusat perhatian”.
+          </p>
+        </div>
+      </article>
+    </div>
+    <br />
+
+    <footer>© 2025 SM Entertainment Indonesia. All Rights Reserved.</footer>
+
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+    </script>
+  </body>
+</html>

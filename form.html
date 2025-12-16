@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fan Membership Registration</title>
+
+    <style>
+      /* =========================
+         GLOBAL & THEME
+      ========================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      :root {
+        --bg-body: #1a001a;
+        --text-main: #ffe6f7;
+        --card-bg: #330033;
+        --accent: #ff008c;
+        --accent-glow: #ff4db8;
+      }
+
+      body.light-theme {
+        --bg-body: #ffffff;
+        --text-main: #1a001a;
+        --card-bg: #fafafa;
+        --accent: #8f3fff;
+        --accent-glow: #b58bff;
+      }
+
+      body {
+        background: var(--bg-body);
+        color: var(--text-main);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        transition: 0.3s;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        background: var(--accent);
+        padding: 20px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      header img {
+        width: 130px;
+        margin-right: 17px;
+      }
+
+      header .title {
+        font-size: 40px;
+        font-weight: 600;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        background: var(--card-bg);
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      }
+
+      nav a:hover {
+        color: #ff66c4;
+      }
+
+      .form-wrapper {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 28px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-wrapper:hover {
+        transform: scale(1.015);
+        box-shadow: 0 0 25px rgba(255, 0, 140, 0.35);
+      }
+
+      .form-wrapper h2 {
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .form-wrapper p.note {
+        font-size: 14px;
+        opacity: 0.85;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .section-title {
+        margin: 25px 0 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--accent);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      small {
+        display: block;
+        font-size: 12px;
+        opacity: 0.8;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        border: 1px solid var(--accent);
+        background: transparent;
+        color: var(--text-main);
+        font-size: 16px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .checkbox input[type="checkbox"] {
+        width: auto;
+        margin: 3px 0 0;
+        flex-shrink: 0;
+      }
+
+      .checkbox p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      select option {
+        color: #000;
+        background: #fff;
+      }
+
+      body.light-theme input,
+      body.light-theme select {
+        background: #fff;
+        color: #000;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .checkbox input {
+        margin-top: 3px;
+      }
+
+      .checkbox p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .btn {
+        width: 100%;
+        height: 52px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background: white;
+        color: var(--accent);
+        box-shadow: 0 0 10px var(--accent-glow);
+      }
+
+      body.light-theme .btn {
+        background: var(--accent);
+        color: white;
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 30%;
+          text-align: center;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          width: 100%;
+          font-size: 36px;
+          margin-top: 10px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 100%;
+          text-align: center;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          font-size: 26px;
+        }
+
+        .form-wrapper {
+          margin: 25px 16px;
+          padding: 22px;
+        }
+      }
+
+      footer {
+        background: var(--accent);
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .success-message {
+        display: none;
+        margin-top: 20px;
+        padding: 14px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        background: rgba(0, 255, 150, 0.15);
+        color: #00ff99;
+        border: 1px solid #00ff99;
+      }
+
+      body.light-theme .success-message {
+        background: rgba(0, 150, 80, 0.15);
+        color: #006644;
+        border-color: #006644;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="sm.png" alt="SM Entertainment" />
+      <div class="title">SM ENTERTAINMENT INDONESIA</div>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="grupsm.html">Groups</a>
+      <a href="fandom.html">Fandom</a>
+      <a href="about.html">About</a>
+    </nav>
+    <br /><br />
+
+    <div class="form-wrapper">
+      <h2>Fan Membership Registration</h2>
+      <p class="note">This membership allows fans to receive official updates and content</p>
+
+      <form id="registerForm">
+        <div class="section-title">Account Information</div>
+
+        <label>Full Name</label>
+        <small>Used for membership identification</small>
+        <input type="text" required />
+
+        <label>Email</label>
+        <small>Used for official announcements</small>
+        <input type="email" required />
+
+        <label>Username</label>
+        <small>Public identity inside fan community</small>
+        <input type="text" required />
+
+        <label>Password</label>
+        <small>Used to protect your account</small>
+        <input type="password" required />
+
+        <div class="section-title">Fan Information</div>
+
+        <label>Country</label>
+        <small>Used for regional content & events</small>
+        <select required>
+          <option value="">Select country</option>
+          <option>China</option>
+          <option>France</option>
+          <option>Germany</option>
+          <option>Indonesia</option>
+          <option>Japan</option>
+          <option>Malaysia</option>
+          <option>Philippines</option>
+          <option>Singapore</option>
+          <option>South Korea</option>
+          <option>Thailand</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Vietnam</option>
+        </select>
+
+        <label>Favorite Group</label>
+        <small>Used to personalize your updates</small>
+        <select required>
+          <option value="">Select group</option>
+          <option>aespa</option>
+          <option>EXO</option>
+          <option>Girls' Generation</option>
+          <option>Hearts2Hearts</option>
+          <option>NCT 127</option>
+          <option>NCT Dream</option>
+          <option>NCT WayV</option>
+          <option>NCT Wish</option>
+          <option>Red Velvet</option>
+          <option>RIIZE</option>
+          <option>S.E.S.</option>
+          <option>TVXQ</option>
+          <option>SHINee</option>
+          <option>Super Junior</option>
+          <option>SuperM</option>
+        </select>
+
+        <label>Gender</label>
+        <small>Optional demographic data</small>
+        <select>
+          <option value="">Select gender</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Prefer not to say</option>
+        </select>
+
+        <div class="checkbox">
+          <input type="checkbox" required />
+          <p>I agree to the use of my data for membership purposes</p>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" required />
+          <p>I have read and agree to the Privacy Policy</p>
+        </div>
+
+        <button class="btn" type="submit">Register Membership</button>
+      </form>
+      <br />
+
+      <div id="successMessage" class="success-message">Registration successful! <br />Welcome to SM Entertainment Fan Membership!</div>
+    </div>
+    <br />
+
+    <footer>© 2025 SM Entertainment Indonesia. All Rights Reserved.</footer>
+
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+
+      const form = document.querySelector("form");
+      const successMsg = document.getElementById("successMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        successMsg.style.display = "block";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

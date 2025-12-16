@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Pembuat</title>
+
+    <style>
+      /* ==========================
+       TEMA WARNA 
+       ========================== */
+      :root {
+        --bg-body: #1a001a;
+        --text-main: #ffe6f7;
+        --card-bg: #330033;
+        --accent: #ff008c;
+        --accent-glow: #ff4db8;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: var(--bg-body);
+        color: var(--text-main);
+      }
+
+      body.light-theme {
+        --bg-body: #ffffff;
+        --text-main: #1a001a;
+        --card-bg: #fafafa;
+        --accent: #8f3fff;
+        --accent-glow: #b58bff;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--accent);
+        padding: 20px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      header img {
+        width: 130px;
+        margin-right: 17px;
+      }
+
+      header .title {
+        font-size: 36px;
+        font-weight: 600;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        background: var(--card-bg);
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      nav a:hover {
+        color: #ff66c4;
+      }
+
+      .profile-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .profile-container:hover {
+        transform: scale(1.015);
+        box-shadow: 0 0 25px rgba(255, 0, 140, 0.35);
+      }
+
+      .profile-container img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .profile-container h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      .profile-container p {
+        text-align: justify;
+        line-height: 1.7;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          width: 100%;
+          font-size: 36px;
+          margin-top: 10px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 30%;
+          text-align: center;
+        }
+
+        .profile-container {
+          margin: 25px 15px;
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 100%;
+          text-align: center;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          font-size: 26px;
+        }
+      }
+
+      footer {
+        background: var(--accent);
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="sm.png" alt="SM Entertainment" />
+      <div class="title">SM ENTERTAINMENT INDONESIA</div>
+    </header>
+
+   <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="grupsm.html">Groups</a>
+      <a href="fandom.html">Fandom</a>
+      <a href="about.html">About</a>
+    </nav> <br><br>
+
+    <div class="profile-container">
+      <img src="sukma.jpg" alt="Foto Pembuat" /><br>
+
+        <h1>Assalamu'alaikum, Guys!</h1>
+            <p style="text-align: justify;">
+                Nama saya Sukma Amalia Sari, saat ini berusia 20 tahun. Saya merupakan mahasiswa Program Studi Sistem Informasi di STMIK Triguna Dharma. Saya memiliki ketertarikan pada bidang keamanan data, pengelolaan informasi, serta pemecahan masalah berbasis sistem. Di luar kegiatan akademik, saya memiliki hobi mendengarkan musik, membaca novel, dan memasak. Melalui hobi tersebut, saya mengembangkan nilai ketelitian, kreativitas, dan kesabaran yang turut mendukung proses belajar dan pengembangan diri. Saya juga dikenal sebagai pribadi yang terbuka terhadap hal-hal baru, senang berbagi ide, serta aktif dalam berdiskusi dan bekerja sama dengan orang lain. Ke depan, saya berharap dapat menyelesaikan studi dengan baik dan berkarier di bidang yang selaras dengan minat serta kompetensi saya, khususnya dalam bidang keamanan data. <br><br> <hr><br><br>
+            </p>
+
+        <h1>Profil Pembuat</h1>
+            <p style="text-align: justify;">
+                Sukma Amalia Sari (수크마 아말리아 사리, lahir 2005) merupakan perempuan asal Temanggung, Jawa Tengah. Ia adalah anak bungsu dari dua bersaudara. Pada tahun 2007, ia berpindah dari Temanggung ke Kota Medan, Sumatera Utara, dan menetap di kota tersebut hingga saat ini. Meskipun lahir di Temanggung, Sukma tumbuh dan berkembang di Medan. Riwayat pendidikan Sukma dimulai di MIS Terpadu Bina Bangsa, kemudian berlanjut ke MTs Negeri 1 Deli Serdang, dan dilanjutkan ke SMK Swasta Dwitunggal 2 Tanjung Morawa. Sejak usia dini, ia telah menunjukkan minat pada bidang seni, khususnya mewarnai gambar, dan pernah meraih juara harapan I tingkat kabupaten/kota. Pada masa kanak-kanak, ia juga memiliki ketertarikan terhadap bidang antariksa dan bercita-cita menjadi seorang astronot.<br><br>
+
+                Pada tahun 2024, Sukma mengikuti kegiatan study tour ke Malaysia bersama guru dan rekan sekolahnya. Kegiatan tersebut berlangsung selama tiga hari dua malam, yaitu pada tanggal 17–19 Februari 2024. Perjalanan ini merupakan pengalaman pertamanya berwisata ke luar negeri. Sukma dan lima temannya mengikuti kegiatan tersebut tanpa dipungut biaya, sebagai bentuk apresiasi dari pihak sekolah atas pencapaian mereka sebagai peraih juara umum. Pada tahun yang sama, Sukma menyelesaikan pendidikan tingkat SMK dengan hasil yang memuaskan. Selama masa pendidikan tersebut, ia memperoleh berbagai pengalaman berharga yang membentuk karakter dan kedewasaannya. Saat ini, Sukma sedang menempuh pendidikan Strata 1 (S1) pada Program Studi Sistem Informasi di STMIK Triguna Dharma dan berada di semester tiga. Ia memiliki komitmen untuk menyelesaikan studinya tepat waktu dengan capaian akademik yang baik sebagai wujud tanggung jawab dan dedikasi kepada orang tua serta masa depannya.   
+            </p><br><br><hr><br><br>
+   
+
+        <h1>Novel Favorit</h1>
+            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                L. Lullaby — DEAR J <br>
+                <i>❝Untukmu, Na Jaemin. Laki-laki tak sempurna, sang pengagum hujan dan sajak.❞</i><br><br>
+
+                L. Lullaby — After DEAR J <br>
+                <i>❝Percayakah kau akan sebuah reinkarnasi? Sebuah pengulangan tragedi kisah cinta yang dikenang sepanjang masa.❞</i><br><br>
+
+                L. Lullaby — WITH J:  After He Left Me<br>
+                <i>❝Maafkan aku, bahkan hingga kau menutup mata, aku tak pernah bisa membahagiakanmu.❞</i><br><br>
+
+                L. Lullaby — After WITH J: Hereditary<br>
+                <i>❝Mereka adalah pasangan yang ditentukan oleh langit, dengan takdir yang dibuat di luar batas kemampuan manusia.❞</i><br><br>
+
+                L. Lullaby — 真実 [TRUTH]: The Prolog<br>
+                <i>❝Tentang cinta yang murni, keserakahan, hingga pertumpahan darah yang membawa petaka selama ratusan tahun.❞</i>
+            </p>
+    </div><br>
+
+    <footer>© 2025 SM Entertainment Indonesia. All Rights Reserved.</footer>
+
+    <script>
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+  }
+</script>
+  </body>
+</html>

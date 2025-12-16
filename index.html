@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS SUKMA AMALIA SARI</title>
+    <style>
+      /* ==========================
+       GLOBAL STYLING (DARK PINK FUTURISTIC)
+       ========================== */
+      :root {
+        --bg-body: #1a001a;
+        --text-main: #ffe6f7;
+        --card-bg: #330033;
+        --accent: #ff008c;
+        --accent-glow: #ff4db8;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: var(--bg-body);
+        color: var(--text-main);
+        transition: background 0.3s, color 0.3s;
+      }
+
+      body.light-theme {
+        --bg-body: #ffffff;
+        --text-main: #1a001a;
+        --card-bg: #fafafa;
+        --accent: #8f3fff;
+        --accent-glow: #b58bff;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--accent);
+        padding: 20px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      header img {
+        width: 130px;
+        height: auto;
+        display: block;
+        margin-right: 17px;
+      }
+      header .title {
+        font-size: 35px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        background: var(--card-bg);
+        padding: 18px;
+        font-size: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      nav a:hover {
+        color: #ff66c4;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin: 25px auto;
+        max-width: 1000px;
+        padding: 0 16px;
+      }
+
+      .action-btn {
+        height: 55px;
+        min-height: 55px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ff66c4;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        cursor: pointer;
+        border: none;
+        font-size: 16px;
+        background: #ffffff;
+        color: var(--accent);
+        white-space: nowrap;
+
+        flex: 1;
+      }
+
+      .btn-profile,
+      .btn-join,
+      .btn-theme {
+        flex: 1;
+      }
+
+      body.light-theme .action-btn {
+        background: var(--accent);
+        color: #ffffff;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.5fr 0.9fr;
+        gap: 20px;
+        padding: 30px;
+      }
+
+      .box {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+      }
+      .box img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        transition: 0.25s;
+      }
+      .box img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+
+      .member-row {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .member-row img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+        transition: 0.3s;
+      }
+      .member-row:hover img {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(255, 80, 160, 0.18);
+      }
+      .member-name {
+        font-weight: 600;
+        margin: 0;
+      }
+      .lihat-all {
+        background: white;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 15px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 8px;
+        font-weight: bold;
+      }
+      .lihat-all:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      hr.sep {
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 102, 196, 0.2), var(--accent));
+        margin: 18px 0;
+      }
+
+      .news-photo {
+        width: 100%;
+        border-radius: 10px;
+        margin: 10px 0;
+      }
+
+      .video-item {
+        margin-bottom: 18px;
+      }
+      .video-item video {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+      }
+      .video-item p {
+        margin: 6px 0 0 0;
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 30%;
+          text-align: center;
+        }
+
+        header {
+          flex-wrap: wrap;
+          text-align: center;
+        }
+
+        header .title {
+          width: 100%;
+          font-size: 36px;
+          margin-top: 10px;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .content-grid > .box:nth-child(3) {
+          grid-column: 1 / -1;
+        }
+
+        .action-buttons {
+          padding: 0 20px;
+        }
+
+        .action-btn {
+          height: 55px;
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        nav a {
+          width: 100%;
+          text-align: center;
+        }
+
+        header .title {
+          font-size: 26px;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          width: 100%;
+          gap: 12px;
+          padding: 0 16px;
+        }
+
+        .action-btn {
+          height: 55px;
+          font-size: 15px;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      footer {
+        background: var(--accent);
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        color: white;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="sm.png" alt="SM Entertainment" />
+      <div class="title" style="font-size: 40px">SM ENTERTAINMENT INDONESIA</div>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="grupsm.html">Groups</a>
+      <a href="fandom.html">Fandom</a>
+      <a href="about.html">About</a>
+    </nav>
+    <br /><br />
+
+    <div class="action-buttons">
+      <a href="profile.html" class="action-btn btn-profile">Profil Pembuat</a>
+
+      <a href="form.html" class="action-btn btn-join"> Join Fan Membership Here! </a>
+
+      <button class="action-btn btn-theme" id="themeToggle">Ubah Tema</button>
+    </div>
+    <br />
+
+    <div class="content-grid">
+      <div class="box">
+        <h2>Favorite Group</h2>
+        <br />
+        <h2>aespa 에스파</h2>
+        <div class="member-row">
+          <img src="karina.jpg" alt="Karina aespa" />
+          <div>
+            <p class="member-name">Karina</p>
+            <small>Leader, Main Dancer</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="giselle.jpg" alt="Giselle aespa" />
+          <div>
+            <p class="member-name">Giselle</p>
+            <small>Main Rapper, Sub-Vocalist</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="winter.webp" alt="Winter aespa" />
+          <div>
+            <p class="member-name">Winter</p>
+            <small>Lead Vocalist, Lead Dancer</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="ningning.jpeg" alt="Ningning aespa" />
+          <div>
+            <p class="member-name">Ningning</p>
+            <small>Main Vocalist, Maknae</small>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h2>NCT DREAM <br />엔시티 드림</h2>
+        <div class="member-row">
+          <img src="mark.jpg" alt="Mark NCT" />
+          <div>
+            <p class="member-name">Lee Mark</p>
+            <small>Main Rapper, Main Dancer</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="renjun.webp" alt="Renjun NCT" />
+          <div>
+            <p class="member-name">Hwang Renjun</p>
+            <small>Main Vocalist, Lead Dancer</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="jeno.webp" alt="Jeno NCT" />
+          <div>
+            <p class="member-name">Lee Jeno</p>
+            <small>Main Dancer, Main Rapper</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="haechan.jpg" alt="Haechan NCT" />
+          <div>
+            <p class="member-name">Lee Haechan</p>
+            <small>Main Vocalist, Dancer</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="jaemin.jpeg" alt="Jaemin NCT" />
+          <div>
+            <p class="member-name">Na Jaemin</p>
+            <small>Sub-Rapper, Visual</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="chenle.jpg" alt="Chenle NCT" />
+          <div>
+            <p class="member-name">Zhong Chenle</p>
+            <small>Main Vocalist</small>
+          </div>
+        </div>
+        <div class="member-row">
+          <img src="jisung.jpg" alt="Jisung NCT" />
+          <div>
+            <p class="member-name">Park Jisung</p>
+            <small>Main Dancer, Maknae</small>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h2>Group Highlights</h2>
+        <div class="member-row">
+          <img src="exo.jpg" alt="EXO" />
+          <div>
+            <p class="member-name">EXO 엑소</p>
+            <small>Group SM Entertainment</small>
+          </div>
+        </div>
+        <br />
+
+        <div class="member-row" style="margin-top: 10px">
+          <img src="redvelvet.webp" alt="Red Velvet" />
+          <div>
+            <p class="member-name">Red Velvet 레드벨벳</p>
+            <small>Group SM Entertainment</small>
+          </div>
+        </div>
+        <br />
+
+        <div class="member-row" style="margin-top: 10px">
+          <img src="nct127.jpg" alt="NCT 127" />
+          <div>
+            <p class="member-name">NCT 127 엔시티 일칠</p>
+            <small>Group SM Entertainment</small>
+          </div>
+        </div>
+        <br />
+
+        <div class="member-row" style="margin-top: 10px">
+          <img src="h2h.jpeg" alt="H2H" />
+          <div>
+            <p class="member-name">Hearts2Hearts 하츠투하츠</p>
+            <small>Group SM Entertainment</small>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+
+        <div style="margin-top: 25px; text-align: center">
+          <a href="grupsm.html" class="lihat-all" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> Lihat Semua Group dari <br />SM Entertainment </a>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Update SM Entertainment</h2>
+        <br />
+
+        <article style="margin-bottom: 20px">
+          <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">- Lee Taeyong Resmi Pulang dari Wajib Militer!</h3>
+          <img class="news-photo" src="taeyong.jpg" alt="Lee  Taeyong" />
+          <p style="text-align: justify; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            Lee Taeyong dari NCT selesai wajib militer pada 14 Desember 2025. Dia mulai menjalani wajib militer sebagai tentara aktif di Angkatan Laut Korea Selatan pada 15 April 2024. Lee Taeyong resmi menyelesaikan tugas wajib militernya.
+            Penyambutan hangat dari fans digelar di berbagai platform dan banyak penggemar menantikan aktivitas solonya ke depan.
+          </p>
+        </article>
+        <br />
+
+        <article style="margin-bottom: 20px">
+          <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">- NCT DREAM Merilis MV Terbaru - "Beat It Up"</h3>
+          <img class="news-photo" src="7dream.jpg" alt="Beat It Up" />
+          <p style="text-align: justify; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            Single terbaru NCT Dream yang berjudul "Beat It Up" mendapat sambutan positif karena konsep futuristik dan koreografi yang kuat. Makna lagu "Beat It Up" NCT Dream adalah tentang menemukan kepercayaan diri, melaju di jalur
+            sendiri, dan mendobrak batasan; lagu ini mengekspresikan energi khas mereka untuk maju dengan ritme mereka sendiri tanpa ragu, mengabaikan pandangan buruk dari orang lain, dan terus berkembang dalam perjalanan mereka, menjadi
+            simbol kebebasan dan ambisi. Lagu ini adalah title track dari mini album keenam mereka, yang menunjukkan evolusi konsep yang lebih dewasa namun tetap mempertahankan energi muda mereka.
+          </p>
+        </article>
+        <br />
+
+        <article style="margin-bottom: 20px">
+          <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">- 4 Tropi aespa di MAMA AWARDS 2025</h3>
+          <img class="news-photo" src="aespa.jpg" alt="aespa" />
+          <p style="text-align: justify; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            aespa menghadiri ajang penghargaan tahunan MAMA AWARDS 2025 yang digelar selama 2 hari, yaitu di 28-29 November. Mereka pun datang bersama para artis dan idol KPop lainnya. Bahkan para member pun menyuguhkan penampilan yang
+            mencuri perhatian para penonton. Nah, aespa menjadi grup yang mendapat piala terbanyak di acara tersebut, yakni sejumlah empat tropi, lho. Yaitu Fans’ Choice Female Top 10, Best Choreography, Best Dance Performance Female Group
+            dan Best Female Group!
+          </p>
+        </article>
+      </div>
+
+      <div class="box video-box">
+        <h2>Featured MV</h2>
+        <br /><br />
+
+        <div class="video-item">
+          <video id="vid1" controls>
+            <source src="drama.mp4" type="video/mp4" />
+          </video>
+          <p>aespa 에스파 'DRAMA' – MV</p>
+        </div>
+        <br /><br />
+
+        <div class="video-item">
+          <video id="vid2" controls>
+            <source src="beatbox.mp4" type="video/mp4" />
+          </video>
+          <p>NCT DREAM 엔시티 드림 'BEATBOX' – MV</p>
+        </div>
+        <br /><br />
+
+        <div class="video-item">
+          <video id="vid3" controls>
+            <source src="h2h.mp4" type="video/mp4" />
+          </video>
+          <p>Hearts2Hearts 하츠투하츠 'FOCUS' – MV</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2025 SM Entertainment Indonesia. All Rights Reserved.</footer>
+
+    <script>
+      const themeBtn = document.getElementById("themeToggle");
+
+      let savedTheme = localStorage.getItem("theme");
+
+      if (!savedTheme) {
+        localStorage.setItem("theme", "dark");
+        savedTheme = "dark";
+      }
+
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+        themeBtn.textContent = "Tema Gelap";
+      } else {
+        document.body.classList.remove("light-theme");
+        themeBtn.textContent = "Ubah Tema";
+      }
+
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+
+        if (document.body.classList.contains("light-theme")) {
+          localStorage.setItem("theme", "light");
+          themeBtn.textContent = "Tema Gelap";
+        } else {
+          localStorage.setItem("theme", "dark");
+          themeBtn.textContent = "Ubah Tema";
+        }
+      });
+    </script>
+  </body>
+</html>
